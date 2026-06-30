@@ -1,6 +1,5 @@
 import './Enquire.css'
 import { useRef, useState } from 'react'
-import emailjs from 'emailjs-com'
 
 import AlternativeFooter from '../Footer/AlternativeFooter'
 
@@ -17,27 +16,32 @@ function Enquire() {
   const [status, setStatus] = useState(null)
   const [loading, setLoading] = useState(false)
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault()
     setLoading(true)
     setStatus(null)
 
-    emailjs
-      .sendForm(
-        'service_cqgyohi',
-        'template_emalvgp',
-        formRef.current,
-        'WUiNf9ApK_txsx0VX'
-      )
-      .then(() => {
-        setStatus('success')
-        setLoading(false)
-        formRef.current.reset()
+    const formData = new FormData(formRef.current)
+    const payload = Object.fromEntries(formData.entries())
+
+    try {
+      const response = await fetch('/api/enquire', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       })
-      .catch(() => {
-        setStatus('error')
-        setLoading(false)
-      })
+
+      if (!response.ok) {
+        throw new Error('Request failed')
+      }
+
+      setStatus('success')
+      formRef.current.reset()
+    } catch {
+      setStatus('error')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
