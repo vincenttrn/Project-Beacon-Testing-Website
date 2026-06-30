@@ -38,12 +38,24 @@ Connect the GitHub repo in the Vercel dashboard. Every push to `main` triggers a
 ## Enquiry flow (Discord + email)
 
 1. Visitor submits the form on `/enquire`
-2. `POST /api/enquire` stores the enquiry, posts to Discord, and sends emails via Resend
-3. Team clicks **Reply** on the Discord message, types a response, and it emails the enquirer
+2. `POST /api/enquire` stores the enquiry, posts to Discord, sends via **EmailJS** (team template), and sends via **Resend** (confirmation + Discord replies)
+3. Team clicks **Reply** on the Discord message, types a response, and it emails the enquirer via Resend
 
 ### One-time setup
 
-#### 1. Resend
+#### 1. EmailJS
+
+1. Log in at [emailjs.com](https://www.emailjs.com)
+2. Use your existing service (`service_cqgyohi`) and template (`template_emalvgp`)
+3. **Account → API Keys** → copy **Public Key** and **Private Key**
+4. **Account → Security** → enable **Allow API for non-browser applications**
+5. Add your Vercel domain to allowed origins, e.g. `https://project-beacon-testing-website.vercel.app`
+
+Template variables should match the form field names:
+
+`school_name`, `name`, `email`, `phone`, `year_level`, `students`, `preferred_date`, `message`
+
+#### 2. Resend
 
 1. Create an account at [resend.com](https://resend.com)
 2. Add and verify the `projectbeacon.org.au` domain
@@ -65,7 +77,7 @@ Connect the GitHub repo in the Vercel dashboard. Every push to `main` triggers a
 7. Create a `#enquiries` channel and copy its ID → `DISCORD_CHANNEL_ID`
 8. **General Information** → set **Interactions Endpoint URL** to:
    ```
-   https://YOUR-VERCEL-DOMAIN.vercel.app/api/discord/interactions
+   https://project-beacon-testing-website.vercel.app/api/discord/interactions
    ```
    Discord will send a PING to verify the endpoint after deploy.
 
@@ -81,8 +93,12 @@ Add these in Vercel → **Settings → Environment Variables** (see `.env.exampl
 | `DISCORD_APPLICATION_ID` | Application ID (for reference / future use) |
 | `UPSTASH_REDIS_REST_URL` | From Upstash |
 | `UPSTASH_REDIS_REST_TOKEN` | From Upstash |
-| `RESEND_API_KEY` | From Resend |
+| `EMAILJS_SERVICE_ID` | EmailJS service ID |
+| `EMAILJS_TEMPLATE_ID` | EmailJS template ID |
+| `EMAILJS_PUBLIC_KEY` | EmailJS public key |
+| `EMAILJS_PRIVATE_KEY` | EmailJS private key (required for server-side) |
+| `RESEND_API_KEY` | From Resend (for confirmations and Discord replies) |
 | `ENQUIRY_FROM_EMAIL` | Sender address, e.g. `support@projectbeacon.org.au` |
-| `TEAM_EMAIL` | Where team notification emails go |
+| `TEAM_EMAIL` | Where Resend team notification emails go |
 
 Redeploy after adding env vars and setting the Discord interactions URL.

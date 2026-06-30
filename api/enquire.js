@@ -3,6 +3,7 @@ import { parseEnquiry } from '../lib/enquiry.js'
 import { saveEnquiry } from '../lib/redis.js'
 import { postEnquiryToDiscord } from '../lib/discord.js'
 import { sendEnquirerConfirmation, sendTeamNotification } from '../lib/email.js'
+import { sendEnquiryViaEmailJS } from '../lib/emailjs.js'
 
 export default async function handler(request) {
   if (request.method !== 'POST') {
@@ -18,12 +19,20 @@ export default async function handler(request) {
     const enquiryId = randomUUID()
 
     await saveEnquiry(enquiryId, enquiry)
+    await postEnquiryToDiscord(enquiry, enquiryId)
 
-    await Promise.all([
-      postEnquiryToDiscord(enquiry, enquiryId),
+    const emailResults = await Promise.allSettled([
       sendTeamNotification(enquiry),
       sendEnquirerConfirmation(enquiry),
+      sendEnquiryViaEmailJS(enquiry),
     ])
+
+    emailResults.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        const channels = ['Resend team email', 'Resend confirmation', 'EmailJS']
+        console.error(`${channels[index]} failed:`, result.reason)
+      }
+    })
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
