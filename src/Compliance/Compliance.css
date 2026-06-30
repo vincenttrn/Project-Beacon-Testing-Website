@@ -1,0 +1,60 @@
+/* main container */
+.safety-container {
+  width: var(--width);
+  margin: 0 auto;
+  padding: 160px 0px 100px;
+  color: var(--textColour);
+}
+
+/* header */
+.safety-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.safety-title {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.safety-updated {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* card */
+.safety-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 56px 48px;
+
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.06),
+    0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* sections */
+.safety-section {
+  margin-bottom: 40px;
+}
+
+.safety-section:last-child {
+  margin-bottom: 0;
+}
+
+.safety-section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--primaryColour);
+}
+
+.safety-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 12px;
+}

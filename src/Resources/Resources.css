@@ -1,0 +1,508 @@
+/* ================== */
+/* page container */
+.resources-container {
+  max-width: var(--max-width);
+  width: var(--width);
+  margin: 0 auto;
+  color: var(--text-colour);
+  display: flex;
+  flex-direction: column;
+}
+
+.resources-container.locked {
+  padding: 150px 0 0;
+}
+
+.resources-container.unlocked {
+  padding: 150px 0 100px;
+}
+
+/* ================== */
+/* header */
+.resources-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resources-title {
+  max-width: 900px;
+  font-size: 56px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+  text-align: center;
+  line-height: 1.18;
+}
+
+.resources-subtitle {
+  max-width: 1100px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ================== */
+/* locked card */
+.resources-locked-card {
+  max-width: 500px;
+  margin: 0 auto 100px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  padding: 36px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.resources-locked-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--label-block-background);
+  border: 1px solid var(--label-block-border);
+  border-radius: 20px;
+  color: var(--primary-colour);
+}
+
+.resources-locked-icon svg {
+  font-size: 34px;
+}
+
+.resources-locked-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.resources-locked-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 32px;
+}
+
+/* ================== */
+/* access code */
+.resources-access-code-section {
+  text-align: left;
+}
+
+.resources-access-code-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.resources-access-code-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  transition: all 0.2s ease;
+}
+
+.resources-access-code-input:focus {
+  outline: none;
+  border-color: var(--primary-colour);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.resources-access-code-input.error {
+  border-color: #ff6b6b;
+  animation: shake 0.3s ease;
+}
+
+.resources-error-message {
+  margin-top: 12px;
+  color: #ff8a8a;
+  font-size: 13px;
+  text-align: center;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+/* ================== */
+/* unlock button */
+.resources-unlock-button {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary-colour);
+  color: #000;
+  border-radius: 14px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.resources-unlock-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ================== */
+/* student welcome */
+.resources-student-welcome {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.resources-welcome-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--label-block-background);
+  border: 1px solid var(--label-block-border);
+  border-radius: 22px;
+  color: var(--primary-colour);
+}
+
+.resources-welcome-icon svg {
+  font-size: 36px;
+}
+
+.resources-welcome-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--primary-colour);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+/* ================== */
+/* shared section headers */
+.student-code-section {
+  margin-top: 80px;
+}
+
+.resources-files-section {
+  margin-top: 40px;
+}
+
+.student-code-header {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.student-code-label {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--primary-colour);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.student-code-header h2 {
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.student-code-header p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ================== */
+/* card grid */
+.student-code-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 34px;
+}
+
+/* ================== */
+/* clean professional cards */
+.student-code-card {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.student-code-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+.student-code-card-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 26px 28px;
+  background: rgba(255, 255, 255, 0.025);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.student-code-card-label {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--primary-colour);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.student-code-card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.student-code-card p {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ================== */
+/* buttons */
+.student-code-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.student-code-toggle-btn,
+.student-code-copy-btn,
+.student-code-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 10px 15px;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.student-code-toggle-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.student-code-copy-btn {
+  background: var(--primary-colour);
+  border: 1px solid var(--primary-colour);
+  color: #000;
+}
+
+.student-code-copy-btn.copied {
+  background: #4ade80;
+  border-color: #4ade80;
+}
+
+.student-code-download-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+}
+
+.student-code-toggle-btn:hover,
+.student-code-copy-btn:hover,
+.student-code-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.student-code-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.11);
+}
+
+/* ================== */
+/* vscode-style code block */
+.student-code-block {
+  margin: 0;
+  max-height: 520px;
+  overflow: auto;
+  background: #1e1e1e;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.student-code-block code {
+  font-family: "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace !important;
+}
+
+/* ================== */
+/* code scrollbar */
+.student-code-block::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.student-code-block::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.student-code-block::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  border: 2px solid #1e1e1e;
+}
+
+.student-code-block::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.36);
+}
+
+/* ================== */
+/* resource/manual card */
+.resource-download-card {
+  margin-bottom: 20px;
+}
+
+.resource-download-btn {
+  text-decoration: none;
+}
+
+.resource-preview-block {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  padding: 28px;
+  background: #1e1e1e;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.resource-preview-icon {
+  width: 74px;
+  height: 74px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  color: var(--primary-colour);
+}
+
+.resource-preview-icon svg {
+  font-size: 38px;
+}
+
+.resource-preview-label {
+  margin-bottom: 6px;
+  color: var(--primary-colour) !important;
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.resource-preview-block h4 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.resource-preview-block p {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ================== */
+/* responsive */
+@media (max-width: 820px) {
+  .student-code-card-topbar {
+    flex-direction: column;
+  }
+
+  .student-code-actions {
+    width: 100%;
+  }
+
+  .student-code-toggle-btn,
+  .student-code-copy-btn,
+  .student-code-download-btn {
+    flex: 1;
+  }
+
+  .student-code-header h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 620px) {
+  .resource-preview-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resource-preview-icon {
+    width: 62px;
+    height: 62px;
+  }
+}
+
+@media (max-width: 520px) {
+  .student-code-actions {
+    flex-direction: column;
+  }
+
+  .student-code-block {
+    font-size: 12.5px;
+  }
+
+  .resources-title {
+    font-size: 42px;
+  }
+
+  .resources-subtitle {
+    font-size: 16px;
+  }
+}

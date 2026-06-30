@@ -1,0 +1,181 @@
+/*  */
+/* mission container */
+.mission-container {
+  max-width: var(--max-width);
+  width: var(--width);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 150px 0 0;
+
+  color: var(--text-colour);
+}
+
+/*  */
+/* header */
+.mission-header {
+  text-align: center;
+  
+  margin-bottom: 60px;
+}
+
+.mission-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 20px;
+  margin-bottom: 24px;
+
+  background: var(--label-block-background);
+  border: 1px solid var(--label-block-border);
+  border-radius: 50px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  color: var(--primary-colour);
+}
+
+.mission-title {
+  font-size: 56px;
+  font-weight: 700;
+  
+  margin-bottom: 20px;
+}
+
+.mission-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+
+  width: var(--subtitle-width);
+
+  color: rgba(255, 255, 255, 0.65);
+  width: 80%;
+  
+  margin: 0 auto;
+}
+
+/*  */
+/* mission pillars grid */
+.mission-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+
+  margin-top: 30px;
+}
+
+/* mission card */
+.mission-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+
+  padding: 40px 32px;
+
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* mission card icon */
+.mission-card-icon {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--label-block-background);
+  border: 1px solid var(--label-block-border);
+  border-radius: 18px;
+
+  color: var(--primary-colour);
+}
+
+/* mission card title */
+.mission-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  
+  margin-bottom: 12px;
+}
+
+/* mission card description */
+.mission-card-description {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/*  */
+/* closing section */
+.mission-closing {
+  text-align: center;
+  margin: 120px 0;
+}
+
+.mission-closing-title {
+  font-size: 40px;
+  font-weight: 700;
+
+  margin-bottom: 20px;
+}
+
+.mission-closing-text {
+  font-size: 18px;
+  
+  max-width: 760px;
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 880px) {
+  .mission-pillars {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .mission-subtitle {
+    text-align: justify;
+  }
+
+  .mission-closing-text {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 450px) {
+  .mission-title {
+    font-size: 42px;
+  }
+
+  .mission-closing-title {
+    font-size: 32px;
+  }
+
+  .mission-subtitle,
+  .mission-card-description,
+  .mission-closing-text {
+    font-size: 14px;
+  }
+}

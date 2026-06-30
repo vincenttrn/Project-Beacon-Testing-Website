@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+
+# Allow static files first
+RewriteCond %{REQUEST_URI} ^/(sitemap\.xml|robots\.txt|logo/) [NC]
+RewriteRule ^ - [L]
+
+# React fallback
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.html [L]

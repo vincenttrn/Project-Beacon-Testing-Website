@@ -1,0 +1,341 @@
+/*  */
+/* main container */
+.enquire-container {
+  max-width: var(--max-width);
+  width: var(--width);
+
+  margin: 0 auto;
+  padding: 150px 0px 100px;
+  color: var(--text-colour);
+}
+
+/*  */
+/* header */
+.enquire-header {
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+.enquire-title {
+  font-size: 56px;
+  font-weight: 700;
+
+  margin-bottom: 16px;
+}
+
+.enquire-subtitle {
+  width: var(--subtitle-width);
+  font-size: 18px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  margin: 0 auto;
+}
+
+/*  */
+/* layout */
+.enquire-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  gap: 32px;
+}
+
+/*  */
+/* form */
+.enquire-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+
+  padding: 40px;
+}
+
+.enquire-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.enquire-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.enquire-field.full {
+  margin-top: 24px;
+}
+
+.enquire-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: fit-content;
+}
+
+.enquire-field input,
+.enquire-field select,
+.enquire-field textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+}
+
+/*  */
+/* Dark mode select styling */
+.enquire-field select {
+  background: rgba(255, 255, 255, 0.05); /* dark semi-transparent */
+  color: #fff; /* white text */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 15px;
+  appearance: none; /* remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Options text color */
+.enquire-field select option {
+  background: rgba(20, 20, 20, 0.95); /* dark background for dropdown options */
+  color: #fff; /* white text */
+}
+
+/* Optional: add a custom arrow */
+.enquire-field select {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  padding-right: 40px;
+}
+/*  */
+
+.enquire-field input:focus,
+.enquire-field textarea:focus,
+.enquire-field select:focus {
+  outline: none;
+  border-color: var(--primary-colour);
+}
+
+.enquire-field textarea {
+  resize: vertical;
+}
+
+.enquire-submit {
+  margin-top: 32px;
+  padding: 16px 32px;
+
+  background: var(--primary-colour);
+  color: #000;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.enquire-submit:hover {
+  transform: translateY(-2px);
+}
+
+/* sidebar */
+.enquire-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.enquire-info-card,
+.enquire-quick-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.enquire-info-card h3 {
+  margin-bottom: 24px;
+}
+
+.enquire-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.enquire-info-item svg {
+  color: var(--primary-colour);
+  font-size: 24px;
+}
+
+.enquire-info-item span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.enquire-info-item p,
+.enquire-info-item a {
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+/* quick response */
+.enquire-quick-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+
+  font-weight: 600;
+
+  color: var(--primary-colour);
+}
+
+.enquire-quick-title span {
+  color: var(--text-colour);
+}
+
+.enquire-availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+
+  font-size: 14px;
+  
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.enquire-availability .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-colour);
+  border-radius: 50%;
+}
+
+
+/* success / error message */
+.enquire-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+
+  border-radius: 16px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.enquire-message svg {
+  font-size: 26px;
+  margin-top: 2px;
+}
+
+.enquire-message.success {
+  background: rgba(0, 255, 170, 0.08);
+  border: 1px solid rgba(0, 255, 170, 0.3);
+}
+
+.enquire-message.success svg {
+  color: #00ffae;
+}
+
+.enquire-message.error {
+  background: rgba(255, 70, 70, 0.08);
+  border: 1px solid rgba(255, 70, 70, 0.3);
+}
+
+.enquire-message.error svg {
+  color: #ff4b4b;
+}
+
+.enquire-message strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.enquire-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@media (max-width: 950px) {
+  .enquire-content {
+    grid-template-columns: 1fr;
+  }
+
+  .enquire-sidebar {
+    order: 2;
+  }
+
+  .enquire-form {
+    order: 1;
+  }
+
+  .enquire-subtitle {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .enquire-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enquire-subtitle {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 450px) {
+  .enquire-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 450px) {
+  .enquire-form,
+  .enquire-info-card {
+    padding: 16px;
+  }
+
+  .enquire-info-item {
+    gap: 12px;
+  }
+  
+  .enquire-info-item p,
+  .enquire-quick-card p {
+    font-size: 14px;
+    text-align: justify;
+  }
+}

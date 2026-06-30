@@ -1,0 +1,99 @@
+/* footer */
+.homepage-footer-container {
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0 0;
+  margin-top: 160px;
+  
+  background: rgba(255, 255, 255, 0.01);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* cta section */
+.homepage-footer-cta-section {
+  width: var(--width);
+  padding: 0 40px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  
+  margin-bottom: 120px;
+}
+
+.homepage-footer-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  padding: 8px 20px;
+  background: var(--label-block-background);
+  border: 1px solid var(--label-block-border);
+  border-radius: 50px;
+  
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-colour);
+}
+
+.homepage-footer-availability-dot {
+  width: 8px;
+  height: 8px;
+
+  background: var(--primary-colour);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.homepage-footer-cta-title {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.2;
+
+  max-width: 800px;
+  
+  color: var(--text-colour);
+}
+
+.homepage-footer-contact-button {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  
+  font-weight: 500;
+  cursor: pointer;
+  
+  transition: all 0.15s ease;
+
+  text-decoration: none;
+  display: inline-block;
+}
+
+.homepage-footer-contact-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.contact-link {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .homepage-footer-cta-title {
+    font-size: 42px;
+  }
+}
